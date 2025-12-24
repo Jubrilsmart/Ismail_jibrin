@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import Navbar from './components/navbar/Navbar'
-import Hero from './components/hero/Hero'
-import Service from './components/services/Service'
-import Project from './components/projects/Project'
-import Skills from './components/skills/Skills'
-import Contact from './components/contact/Contact'
-import Footer from './components/footer/Footer'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import Collapsible from './components/Collapsible'
+import { useEffect, useState } from 'react'
+import Navbar from './components/navbar/Navbar';
+import Hero from './components/hero/Hero';
+import Skills from './components/skills/Skills';
+import Service from './components/services/Service';
+import Project from './components/projects/Project';
+import Contact from './components/contact/Contact';
+import Footer from './components/footer/Footer';
 
 
 
@@ -29,7 +28,7 @@ function App() {
   return (
     <div>
       <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
-      <Hero isMenuOpen={isMenuOpen}/>
+      <Hero isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
       <Skills />
       <Service />
       <Project />

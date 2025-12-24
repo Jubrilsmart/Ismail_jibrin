@@ -43,9 +43,9 @@ const Skills = () => {
             <div>
                 <Slider {...settings}>
                 {skills.map((skill) => (
-                    <div key={skill.title} className='text-5xl text-center mx-auto'>
+                    <div key={skill.title} className='text-5xl lg:tex text-center mx-auto'>
                         {skill.icon}
-                        <p className='text-xl'>{skill.title}</p>
+                        <p className='text-xs sm:text-xl'>{skill.title}</p>
                     </div>
                 ))}
                 </Slider>

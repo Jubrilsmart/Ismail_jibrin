@@ -1,6 +1,5 @@
 import React from 'react';
-import HeroImg from '../assets/projects/Colourful-pen-216053-pixahive.jpg';
-import { BiHome } from 'react-icons/bi';
+import HeroImg from '../assets/contact/swappy-20251223-200642.png';
 import { HiBriefcase, HiFolder, HiHome, HiMail } from 'react-icons/hi';
 
 
@@ -20,7 +19,7 @@ function Collapsible({ className }) {
             <ul className='text-black text-xl dark:text-gray-50 z-10 flex flex-col justify-center w-fit mx-auto'>
                 {links.map((link) =>
                     <li key={link.name} className='text-xl mb-4 mr-3 hover:text-gray-400 hover:bg-blue-500/10'>
-                        <a href={link.href}>
+                        <a href={link.href} >
                             {link.icon}{link.name}
                         </a>
                     </li>

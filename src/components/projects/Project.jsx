@@ -1,36 +1,47 @@
 import React from 'react';
-import project1 from '../../assets/projects/book1.jpeg'
+import project3 from '../../assets/projects/book1.jpeg';
+import project2 from '../../assets/projects/landing.png';
+import project1 from '../../assets/projects/e-commerce.png'
+import project4 from '../../assets/projects/OtpGen.png'
+import CustomLink from '../CustomLink';
 
 const projects = [
   {
     id: 1,
     image: project1,
-    title: 'Lorem ipsum dolor sit.',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, nostrum magni. Adipisci quod molestiae obcaecati similique! Officia omnis labore placeat?'
+    title: 'Dummy e-commerce',
+    description: 'A sample e-commerce store built to demonstrate product listings, shopping cart functionality, and a smooth checkout flow. Designed for testing, learning, and showcasing UI/UX without real transactions or payments.',    
+    url: 'https://clothing-e-commerce-theta.vercel.app/'
   },
+
   {
     id: 2,
-    image: project1,
-    title: 'Lorem ipsum dolor sit.',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, nostrum magni. Adipisci quod molestiae obcaecati similique! Officia omnis labore placeat?'
+    image: project4,
+    title: 'OTP Generator',
+    description: 'Sinple and short project that emulate OTP generator with ',
+    url: '/pass'
   },
   {
     id: 3,
-    image: project1,
+    image: project3,
     title: 'Lorem ipsum dolor sit.',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, nostrum magni. Adipisci quod molestiae obcaecati similique! Officia omnis labore placeat?'
-  },
-  {
-    id: 4,
-    image: project1,
-    title: 'Lorem ipsum dolor sit.',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, nostrum magni. Adipisci quod molestiae obcaecati similique! Officia omnis labore placeat?'
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, nostrum magni. Adipisci quod molestiae obcaecati similique! Officia omnis labore placeat?',
+    url: null
   },
 {
-  id: 5,  
-  image: project1,
+  id: 4,  
+  image: project3,
     title: 'Lorem ipsum dolor sit.',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, nostrum magni. Adipisci quod molestiae obcaecati similique! Officia omnis labore placeat?'
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, nostrum magni. Adipisci quod molestiae obcaecati similique! Officia omnis labore placeat?',
+    url: null
+  }, 
+  
+  {
+    id: 5,
+    image: project2,
+    title: 'Customisable Landing Page',
+    description: 'A flexible landing page that lets you customize layout, colors, and content to fit your brand. Designed to look great on all devices and help you capture attention, generate leads, and drive conversions.',
+    url: 'https://react-landing-page-sand-one.vercel.app'
   },
 
 ]
@@ -43,21 +54,29 @@ function Project() {
                 <h2 className='text-3xl font-bold p-2 m-5'>Featured Projects</h2>
             </div>
             <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 items-center'>
+
+
+              {/* project card */}
               {projects.map((project) => (
-                <div key={project.id}
-                className=' border border-dark bg-blue-500/20 dark:border-light/50 rounded-lg mx-4'
-                >
-                  <div className='h-60 w-full'>
-                    <a href='#'><img src={project.image} alt="" 
-                    className='w-full h-full object-cover rounded-t-lg'
-                    /></a>
-                  </div>
-                  <div className='p-5'>
-                    <h3 className='text-3xl text-blue-500 font-bold mb-5'>{project.title}</h3>
-                    <p>{project.description}</p>
-                  </div>
-                  
-                </div>
+                <CustomLink to={project.url}>
+                  <div key={project.id}
+                  className=' border border-dark bg-blue-500/20 dark:border-light/50 rounded-lg mx-4'
+                  >
+
+                    {/* image section */}
+                    <div className='h-60 w-full'>
+                        <img src={project.image} alt="" 
+                      className='w-full h-full object-cover rounded-t-lg'
+                      />
+                    </div>
+
+                    {/* text section  */}
+                    <div className='p-5'>
+                      <h3 className='text-3xl text-blue-500 font-bold mb-5'>{project.title}</h3>
+                      <p>{project.description}</p>
+                    </div>
+                </div> 
+                </CustomLink>
               ))}
             </div>
         </div>

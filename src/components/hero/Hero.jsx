@@ -5,7 +5,7 @@ import { FaInstagram, FaLinkedin, FaTwitter, FaX } from 'react-icons/fa6';
 import { GrMail } from 'react-icons/gr';
 import Collapsible from '../Collapsible';
 
-function Hero({ isMenuOpen }) {
+function Hero({ isMenuOpen, setIsMenuOpen }) {
   return (
     <section className="bg-light dark:bg-dark text-dark dark:text-light relative">
       <div className="container mx-auto px-4 py-10 lg:pb-36 ">
@@ -35,7 +35,14 @@ function Hero({ isMenuOpen }) {
 			</div> */}
 		</div>
       </div>
-	  {isMenuOpen && <Collapsible />}
+	  {isMenuOpen && (
+		<>
+			<Collapsible />
+			<div 
+			onClick={() => setIsMenuOpen(false)}
+			className='w-full h-screen absolute'></div>
+		</>
+		)}
     </section>
   )
 }

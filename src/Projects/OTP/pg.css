@@ -1,0 +1,47 @@
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-color: yellow;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  font-family: Roboto;
+}
+
+#otp-title {
+  margin: 15px 0 30px 0;
+}
+
+#otp-display {
+  margin: 20px;
+  font-size: 1.5rem;
+}
+
+#otp-timer {
+  margin: 10px;
+  font-size: 1.2rem;
+  font-family: Tahoma;
+}
+
+#generate-otp-button {
+  padding: 10px;
+  font-size: 1.2rem;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  margin-top: 40px;
+}
+
+#generate-otp-button:hover {
+  cursor: pointer;
+}
+#generate-otp-button:disabled {
+  cursor: not-allowed;
+  background-color: grey;
+}

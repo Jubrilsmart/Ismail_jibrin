@@ -1,0 +1,224 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Tic-Tac-Toe</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.development.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.development.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.5/babel.min.js"></script>
+    <script
+      data-plugins="transform-modules-umd"
+      type="text/babel"
+      src="index.jsx"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div id="root"></div>
+    <script
+      data-plugins="transform-modules-umd"
+      type="text/babel"
+      data-presets="react"
+      data-type="module"
+    >
+      import { Board } from './index.jsx';
+      ReactDOM.createRoot(document.getElementById('root')).render(<Board />);
+    </script>
+</body>
+
+</html>
+
+** end of index.html **
+
+** start of styles.css **
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 100vh;
+}
+
+
+.container {
+    text-align: center;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 20px;
+    height: 1.2em; 
+}
+
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0; 
+}
+
+
+.row + .row {
+    margin-top: -1px; 
+}
+
+.square {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square:hover {
+    background-color: #f0f0f0;
+}
+
+.square:nth-child(even) {
+    color: #007bff;
+}
+
+.square:nth-child(odd) {
+    color: #dc3545; 
+}
+
+
+#reset {
+    margin-top: 25px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#reset:hover {
+    background-color: #0056b3;
+}
+
+
+** end of styles.css **
+
+** start of index.jsx **
+
+const { useState } = React;
+
+export function Board() {
+  const initialBoard = [
+    ['', '', ''],
+    ['', '', ''],
+    ['', '', ''],
+  ]
+  const [board, setBoard] = useState(initialBoard);
+  const [currentPlayer, setCurrentPlayer] = useState('X');
+  const [winner, setWinner] = useState('');
+
+  function checkWinner(board) {
+  for (let row of board) {
+    if (row[0] !== '' && row.every(cell => cell === row[0])) {
+      return row[0];
+    }
+  }
+
+  for (let col = 0; col < 3; col++) {
+    if (board[0][col] !== '' &&
+        board[0][col] === board[1][col] &&
+        board[1][col] === board[2][col]) {
+      return board[0][col];
+    }
+  }
+
+  if (board[0][0] !== '' && board[0][0] === board[1][1] && board[1][1] === board[2][2]) {
+    return board[0][0];
+  }
+  if (board[0][2] !== '' && board[0][2] === board[1][1] && board[1][1] === board[2][0]) {
+    return board[0][2];
+  }
+  return null
+}
+
+  function handleClick(row, col) {
+    if (board[row][col] !== '') return
+
+    const newBoard = board.map((r) => [...r]);
+    newBoard[row][col] = currentPlayer;
+    setBoard(newBoard);
+    setCurrentPlayer((prev) => prev === 'X' ? 'O' : 'X')
+
+    const checkWin = checkWinner(newBoard)
+    if (!newBoard.flat().includes('')) {
+      setWinner('draw');
+    }
+    if (checkWin) {
+      console.log(checkWin)
+      setWinner(checkWin)
+    }
+  }
+
+function reset() {
+  setBoard(
+    [['', '', ''],
+    ['', '', ''],
+    ['', '', ''],]);
+  setCurrentPlayer('X');
+  setWinner(null);
+}
+
+
+
+  return (
+    <div className="container">
+      <h1>Tic-Tac-Toe</h1>
+      <p>{winner ? (winner==='draw' ? "It's a draw!" : 'Winner: ' + winner) : 'Next player: ' + currentPlayer}</p>
+      <div className="row">
+        <button disabled={winner} className="square" onClick={() => handleClick(0, 0)}>{board[0][0]}</button>
+        <button disabled={winner} className="square" onClick={() => handleClick(0, 1)}>{board[0][1]}</button>
+        <button disabled={winner} className="square" onClick={() => handleClick(0, 2)}>{board[0][2]}</button>
+      </div>
+      <div className="row">
+        <button disabled={winner} className="square" onClick={() => handleClick(1, 0)}>{board[1][0]}</button>
+        <button disabled={winner} className="square" onClick={() => handleClick(1, 1)}>{board[1][1]}</button>
+        <button disabled={winner} className="square" onClick={() => handleClick(1, 2)}>{board[1][2]}</button>
+      </div>
+      <div className="row">
+        <button disabled={winner} className="square" onClick={() => handleClick(2, 0)}>{board[2][0]}</button>
+        <button disabled={winner} className="square" onClick={() => handleClick(2, 1)}>{board[2][1]}</button>
+        <button disabled={winner} className="square" onClick={() => handleClick(2, 2)}>{board[2][2]}</button>
+      </div>
+      <button id='reset' onClick={reset}>Reset</button>
+    </div>
+  )
+}
+
+** end of index.jsx **
+

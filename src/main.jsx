@@ -7,11 +7,15 @@ import "slick-carousel/slick/slick-theme.css";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import OTPGenerator from './Projects/OTP/OTPGenerator.jsx';
 import ErrorPage from './ErrorPage.jsx';
+import Board from './Projects/Tic-Tac-Toe/Tic-Tac-Toe.jsx';
+import QuoteApp from './Projects/QuoteGen/QuoteApp.jsx';
 
 
 const router = createBrowserRouter([
   {path: '/', element: <App />, errorElement: <ErrorPage />},
-  {path: '/pass', element: <OTPGenerator />}
+  {path: '/pass', element: <OTPGenerator />},
+  {path: '/tic-tac-toe', element: <Board />},
+  {path: '/quote', element: <QuoteApp />}
 ])
 
 createRoot(document.getElementById('root')).render(

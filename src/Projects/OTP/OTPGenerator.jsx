@@ -1,6 +1,7 @@
 // import './pg.css'
 import React from 'react'
 import { useState, useEffect, useRef } from 'react'
+import Return from '../../components/Return';
 
 function OTPGenerator() {
   const [timer, setTimer] = useState(0);
@@ -43,6 +44,7 @@ function OTPGenerator() {
 
   return (
     <div className="absolute inset-0 flex justify-center items-center bg-light dark:bg-dark dark:text-light">
+      <Return />
       <div className=' size-70 text-center space-y-10'>
         <h1 id="otp-title" className='text-5xl font-bold'>
           OTP Generator
@@ -54,7 +56,7 @@ function OTPGenerator() {
           {timerElement ? (timer > 0 ? `Expires in: ${timer} seconds` : "OTP expired. Click the button to generate a new OTP.") : ''}
         </p>
         <button ref={ref} id="generate-otp-button" onClick={handleClick}
-        className='bg-blue-500 px-2 py-1 rounded-md text-xl'
+        className='bg-blue-500 px-2 py-1 rounded-md text-xl hover:cursor-pointer hover:bg-blue-600'
         >
           Generate OTP
         </button>

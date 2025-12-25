@@ -1,8 +1,9 @@
 import React from 'react';
-import project3 from '../../assets/projects/book1.jpeg';
 import project2 from '../../assets/projects/landing.png';
 import project1 from '../../assets/projects/e-commerce.png'
-import project4 from '../../assets/projects/OtpGen.png'
+import project4 from '../../assets/projects/OtpGen.png';
+import project5 from '../../assets/projects/Tic-Tac.png';
+import project3 from '../../assets/projects/Quote.png';
 import CustomLink from '../CustomLink';
 
 const projects = [
@@ -23,17 +24,17 @@ const projects = [
   },
   {
     id: 3,
-    image: project3,
-    title: 'Lorem ipsum dolor sit.',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, nostrum magni. Adipisci quod molestiae obcaecati similique! Officia omnis labore placeat?',
-    url: null
+    image: project5,
+    title: 'Tic-Tac-Toe game',
+    description: 'This is a game that emulate the popular tic-tac-toe game with players',
+    url: '/tic-tac-toe'
   },
 {
   id: 4,  
   image: project3,
-    title: 'Lorem ipsum dolor sit.',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, nostrum magni. Adipisci quod molestiae obcaecati similique! Officia omnis labore placeat?',
-    url: null
+    title: 'Quote Generator App',
+    description: 'A React-based quote app with API integration, background prefetching, dynamic theming, and social sharing.',
+    url: '/quote'
   }, 
   
   {

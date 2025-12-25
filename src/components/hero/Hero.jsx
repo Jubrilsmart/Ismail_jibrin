@@ -1,8 +1,3 @@
-import React from 'react';
-import HeroImg from '../../assets/hero/her01.png';
-import { FaFacebook } from 'react-icons/fa';
-import { FaInstagram, FaLinkedin, FaTwitter, FaX } from 'react-icons/fa6';
-import { GrMail } from 'react-icons/gr';
 import Collapsible from '../Collapsible';
 
 function Hero({ isMenuOpen, setIsMenuOpen }) {

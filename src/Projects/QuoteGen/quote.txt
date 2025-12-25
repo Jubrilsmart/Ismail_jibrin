@@ -1,0 +1,94 @@
+const store = Redux.createStore(quoteReducer);
+
+const Provider = ReactRedux.Provider;
+const connect = ReactRedux.connect;
+
+class Presentational extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      payload: {},
+      counter: 0,
+      fade: ""
+    }
+    this.newQuote = this.newQuote.bind(this);
+  }
+  
+  fetchData = async () => {
+    try{ 
+      const res = await fetch("https://cors-anywhere.herokuapp.com/https://zenquotes.io/api/random")
+;
+      const data = await res.json();
+      return data;
+    } catch (error) {
+     console.log(error) 
+    }
+  }
+  
+  newQuote = () => {
+    this.setState({ fade: true });
+    
+    this.fetchData().then(data => {
+        const payload = {
+          quote: data[0].q,
+          author: data[0].a
+          
+      }
+        this.props.addNewMessage(payload);
+    })
+    
+    
+    setTimeout(() => {
+      this.setState((prevState) => ({
+        fade: false,
+        counter: prevState.counter + 1
+      }));
+    }, 500);
+}
+ 
+  render() {
+    const author = "-- " + this.props.payload[this.state.counter].author;
+    const quote = this.props.payload[this.state.counter].quote
+    const bg = `bg-color${(this.state.counter) % 6}`
+    document.body.classList.toggle(bg);
+    const color = `color${this.state.counter % 6}`;
+
+    
+    return(
+      <div id="quote-box">
+        <blockquote className={`quote ${this.state.fade ? "fade" : ""} ${color}`}>
+          <p id="text"><span>&ldquo;</span>{quote}</p>
+          <footer id="author">{author}</footer>
+        </blockquote>
+        <div>
+          <button id="new-quote" className={`default-bg ${bg}`} onClick={this.newQuote}>New Quote</button>
+          <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+            `"${quote}" — ${author}`
+            )}`} id="tweet-quote" target="_blank" rel="noreferrer">
+                <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                className={`default-col ${color}`}
+                >
+                <path d={svg} />
+            </svg>
+          </a>
+        </div>
+       </div> 
+    )
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {payload: state}
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addNewMessage: (payload) => {
+      dispatch(addQuote(payload))
+    }
+  }
+}

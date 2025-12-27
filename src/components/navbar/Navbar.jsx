@@ -30,8 +30,10 @@ function Navbar({ isMenuOpen, setIsMenuOpen }) {
                         <a 
                         href="https://github.com/jubrilsmart" 
                         target='_blank'
-                        ><FaGithub className='mr-4'/></a>
-                        <DarkMode className='mr-4' /> 
+                        >
+                            <FaGithub className='mr-4'/>
+                        </a>
+                        <DarkMode className='mr-4 hover:cursor-pointer'/> 
                 
                     <div className='relative flex text-xl sm:hidden'>
                             

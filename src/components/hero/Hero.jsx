@@ -1,6 +1,7 @@
 import React from 'react';
 import { GrMail } from 'react-icons/gr';
 import Collapsible from '../Collapsible';
+import { BiDownload } from 'react-icons/bi';
 
 function Hero({ isMenuOpen, setIsMenuOpen }) {
   return (
@@ -17,8 +18,11 @@ function Hero({ isMenuOpen, setIsMenuOpen }) {
 				A seasoned Frontend Developer transforming ideas into stunning reality
 			</p>
 
-			<button className="bg-blue-500 px-6 py-2 rounded-lg text-lg md:text-xl hover:bg-blue-700 transition">
-				Hire Me
+			<button className="bg-blue-500 px-6 py-2 rounded-lg text-lg md:text-xl hover:bg-blue-700 duration-200 hover:cursor-pointer">
+				<a href="/Ismail_Jibrin_Frontend_Developer_Resume.pdf" target='_blank' download="Ismail_Jibrin_Frontend_Developer_Resume.pdf">
+					<BiDownload className='inline-block mr-2'/>
+					Resume
+				</a>
 			</button>
 			</div>
 			

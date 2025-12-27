@@ -63,14 +63,14 @@ function Project() {
             <div>
                 <h2 className='text-3xl font-bold p-2 m-5'>Featured Projects</h2>
             </div>
-            <div className='grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 items-center'>
+            <div className='grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 items-center'>
 
 
               {/* project card */}
               {projects.map((project) => (
                 <CustomLink to={project.url}>
                   <div data-aos='fade-out' key={project.id}
-                  className=' border border-dark bg-blue-500/20 dark:border-light/50 rounded-lg mx-4'
+                  className=' border border-dark bg-blue-500/20 dark:border-light/50 rounded-lg mx-4 h-130 duration-100'
                   >
 
                     {/* image section */}

@@ -5,17 +5,17 @@ function Contact() {
   return (
     <div id='contact' className='bg-light text-dark dark:bg-dark dark:text-light px-6 pb-20'>
         <div className='container mx-auto'>
-            <div>
+            <div data-aos='fade-in'>
                 <h2 id='contact'
                 className='text-3xl font-bold pb-5 pt-20 pl-4 lg:pl-0'
                 >Contact</h2>
             </div>
-            <div className='md:grid md:grid-cols-[2fr_1fr]'>
+            <div data-aos='fade-left' className='md:grid md:grid-cols-[2fr_1fr]'>
                 <div>
                     <img src={IMG} alt="" className='size-50 object-cover rounded-full mx-auto'/>
                     <p className='pt-6 text-xl'>I am currently open to part-time, contract and full time opportunity in Front End Development</p>
                 </div>
-                <form className='space-y-6'>
+                <form data-aos='fade-right' className='space-y-6'>
                     <h3 className='text-2xl font-semibold mt-10 lg:mt-0'>Let me call you!</h3>
                     <div className='flex gap-8'>
                         <input type="text" placeholder='Your name' 

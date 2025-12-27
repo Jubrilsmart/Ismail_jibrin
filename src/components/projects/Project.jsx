@@ -4,11 +4,18 @@ import project1 from '../../assets/projects/e-commerce.png'
 import project4 from '../../assets/projects/OtpGen.png';
 import project5 from '../../assets/projects/Tic-Tac.png';
 import project3 from '../../assets/projects/Quote.png';
+import project6 from '../../assets/projects/ShoppingApp.png'
 import CustomLink from '../CustomLink';
 
 const projects = [
+  {  id: 1,
+    image: project6,
+    title: 'Shopping List App',
+    description: 'A Shopping List App built with React, Redux, Tailwind CSS, and Local Storage that supports full CRUD operations. It features modal pop-ups for adding items and clearing the list, with persistent data and a responsive, user-friendly design.',
+    url: '/shopping'
+  },
   {
-    id: 1,
+    id: 2,
     image: project1,
     title: 'Dummy e-commerce',
     description: 'A sample e-commerce store built to demonstrate product listings, shopping cart functionality, and a smooth checkout flow. Designed for testing, learning, and showcasing UI/UX without real transactions or payments.',    
@@ -16,34 +23,36 @@ const projects = [
   },
 
   {
-    id: 2,
+    id: 3,
     image: project4,
     title: 'OTP Generator',
     description: 'Sinple and short project that emulate OTP generator with ',
     url: '/pass'
   },
   {
-    id: 3,
+    id: 4,
     image: project5,
     title: 'Tic-Tac-Toe game',
     description: 'This is a game that emulate the popular tic-tac-toe game with players',
     url: '/tic-tac-toe'
   },
 {
-  id: 4,  
+  id: 5,  
   image: project3,
     title: 'Quote Generator App',
     description: 'A React-based quote app with API integration, background prefetching, dynamic theming, and social sharing.',
     url: '/quote'
   }, 
-  
+
   {
-    id: 5,
+    id: 6,
     image: project2,
     title: 'Customisable Landing Page',
     description: 'A flexible landing page that lets you customize layout, colors, and content to fit your brand. Designed to look great on all devices and help you capture attention, generate leads, and drive conversions.',
     url: 'https://react-landing-page-sand-one.vercel.app'
   },
+
+ 
 
 ]
 
@@ -60,7 +69,7 @@ function Project() {
               {/* project card */}
               {projects.map((project) => (
                 <CustomLink to={project.url}>
-                  <div key={project.id}
+                  <div data-aos='fade-out' key={project.id}
                   className=' border border-dark bg-blue-500/20 dark:border-light/50 rounded-lg mx-4'
                   >
 

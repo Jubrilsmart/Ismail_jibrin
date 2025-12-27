@@ -3,7 +3,7 @@ import { BsTwitterX } from "react-icons/bs";
 import Return from "../../components/Return";
 
 const COLORS = [
-  "#1F2937", "#DC2626", "#2563EB", "#16A34A", "#7C3AED",
+  "#3C7C70", "#310BF0", "#2563EB", "#16A34A", "#7C3AED",
   "#F59E0B", "#0D9488", "#DB2777", "#EA580C", "#111827"
 ];
 
@@ -41,6 +41,7 @@ function QuoteApp() {
   useEffect(() => {
     if (quotes.length - index < 3) {
       fetchQuote();
+      console.log(quotes)
     }
   }, [index, quotes.length]);
 

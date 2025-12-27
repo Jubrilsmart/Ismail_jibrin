@@ -6,4 +6,37 @@
 @theme {
     --color-dark: oklch(0.149 0.0271 277);
     --color-light: oklch(0.847 0.0247 277);
+    --color-forest-950: #051f20; /* main dark background */
+    --color-forest-900: #0b2b26; /* surfaces */
+    --color-forest-800: #163832; /* cards / borders */
+    --color-forest-700: #235347; /* primary actions */
+
+    /* Light sage tones */
+    --color-sage-200: #daf1de; /* light background / primary text */
+    --color-sage-400: #beb69b; /* secondary text / surfaces */
+
+    /* ===== GRADIENTS ===== */
+
+    --background-image-gradient-dark: linear-gradient(
+        135deg,
+        #051f20,
+        #163832,
+        #235347
+    );
+
+    --background-image-gradient-light: linear-gradient(
+        135deg,
+        #daf1de,
+        #beb69b
+    );
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+

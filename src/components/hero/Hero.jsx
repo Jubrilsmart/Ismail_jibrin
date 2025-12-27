@@ -1,3 +1,5 @@
+import React from 'react';
+import { GrMail } from 'react-icons/gr';
 import Collapsible from '../Collapsible';
 
 function Hero({ isMenuOpen, setIsMenuOpen }) {

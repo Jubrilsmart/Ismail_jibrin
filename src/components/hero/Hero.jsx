@@ -18,8 +18,8 @@ function Hero({ isMenuOpen, setIsMenuOpen }) {
 				A seasoned Frontend Developer transforming ideas into stunning reality
 			</p>
 
-			<button className="bg-blue-500 px-6 py-2 rounded-lg text-lg md:text-xl hover:bg-blue-700 duration-200 hover:cursor-pointer">
-				<a href="/Ismail_Jibrin_Frontend_Developer_Resume.pdf" target='_blank' download="Ismail_Jibrin_Resume.pdf">
+			<button className="bg-blue-500 px-6 py-2 rounded-lg text-lg md:text-xl hover:bg-blue-700 duration-200 hover:cursor-pointer active:bg-gray-500">
+				<a href="/Ismail_Jibrin_Frontend_Developer_Resumee.pdf" target='_blank' download="Ismail_Jibrin_Resume.pdf">
 					<BiDownload className='inline-block mr-2'/>
 					Resume
 				</a>

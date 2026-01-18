@@ -19,7 +19,7 @@ function Hero({ isMenuOpen, setIsMenuOpen }) {
 			</p>
 
 			<button className="bg-blue-500 px-6 py-2 rounded-lg text-lg md:text-xl hover:bg-blue-700 duration-200 hover:cursor-pointer">
-				<a href="/Copy of Untitled document.pdf" target='_blank' download="Ismail_Jibrin_Frontend_Developer_Resume.pdf">
+				<a href="/Ismail_Jibrin_Frontend_Developer_Resume.pdf" target='_blank' download="Ismail_Jibrin_Resume.pdf">
 					<BiDownload className='inline-block mr-2'/>
 					Resume
 				</a>

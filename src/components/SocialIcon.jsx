@@ -27,7 +27,6 @@ function SocialIcon({ className }) {
                 <a href="#" className="hover:scale-110 hover:text-gray-400 transition"><FaX /></a>
                 <a href="#" className="hover:scale-110 hover:text-gray-400 transition"><FaInstagram /></a>
                 <a href="#" className="hover:scale-110 hover:text-gray-400 transition"><FaLinkedin /></a>
-                <a href="#" className="hover:scale-110 hover:text-gray-400 transition"><FaTwitter /></a>
             </div> 
         </div>
     </div>

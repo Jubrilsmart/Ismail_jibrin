@@ -3,7 +3,7 @@ import IMG from '../../assets/contact/swappy-20251223-200642.png'
 
 function Contact() {
   return (
-    <div id='contact' className='bg-light text-dark dark:bg-dark dark:text-light px-6 pb-20'>
+    <div id='contact' className='bg-light text-dark dark:bg-dark dark:text-light px-6 pb-20 w-screen'>
         <div className='container mx-auto'>
             <div data-aos='fade-in'>
                 <h2 id='contact'

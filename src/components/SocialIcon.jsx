@@ -1,7 +1,6 @@
 import React from 'react'
-import { BsWhatsapp } from 'react-icons/bs'
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa'
-import { FaX } from 'react-icons/fa6'
+import { BsTwitterX, BsWhatsapp } from 'react-icons/bs'
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
 import { GrMail } from 'react-icons/gr'
 
 function SocialIcon({ className }) {
@@ -24,7 +23,7 @@ function SocialIcon({ className }) {
             </div>
             <div className='flex flex-wrap lg:justify-start gap-4'>
                 <a href="#" className="hover:scale-110 hover:text-gray-400 transition"><FaFacebook /></a>
-                <a href="#" className="hover:scale-110 hover:text-gray-400 transition"><FaX /></a>
+                <a href="#" className="hover:scale-110 hover:text-gray-400 transition"><BsTwitterX /></a>
                 <a href="#" className="hover:scale-110 hover:text-gray-400 transition"><FaInstagram /></a>
                 <a href="#" className="hover:scale-110 hover:text-gray-400 transition"><FaLinkedin /></a>
             </div> 

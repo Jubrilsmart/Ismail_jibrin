@@ -25,12 +25,12 @@ function QuoteApp() {
   // Fetch one quote and append it
   const fetchQuote = async () => {
     try {
-      const res = await fetch("https://api.quotable.io/random");
+      const res = await fetch("https://quoteslate.vercel.app/api/quotes/random");
       const data = await res.json();
 
       setQuotes(prev => [
         ...prev,
-        { quote: data.content, author: data.author }
+        { quote: data.quote, author: data.author }
       ]);
     } catch (err) {
       console.error(err);
